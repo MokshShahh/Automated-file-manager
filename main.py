@@ -1,5 +1,5 @@
 import os
-from shutil import move #because the os.rename function does not work with "\" and windows folders are full of them
+from shutil import move #becauses the os.rename function does not work with "\" and windows folders are full of them
 
 def organize_files(root):
     """
