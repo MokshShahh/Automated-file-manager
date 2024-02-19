@@ -26,7 +26,7 @@ def organize_files(root):
         key=ext.replace("."," ")
         path=os.path.join(root,key)
         if os.path.isdir(path):
-            for file in files_dict[ext]:
+            for file in files_dict[ext]:    #TODO make this into a function
                 full=file+ext
                 move(os.path.join(root,full),path)  #moves file from main folder into sub folder which was created above
         else:
