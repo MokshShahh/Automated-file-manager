@@ -1,12 +1,12 @@
 import os
-from shutil import move #becauses the os.rename function does not work with "\" and windows folders are full of them
+from shutil import move #because the os.rename function does not work with "\" and windows folders are full of them
 
 def organize_files(root):
     """
     function accepts folder path as input and organizes everything within that folder
     it ignores any sub folder within main folder and only organizes files
     """
-    root=(r"C:\Users\moksh\OneDrive\Desktop\Test")
+    
     files_dict={}
     for path,dir,files in os.walk(root):
         #print(files)
@@ -25,10 +25,16 @@ def organize_files(root):
     for ext in files_dict.keys():
         key=ext.replace("."," ")
         path=os.path.join(root,key)
-        os.mkdir(path)      #makes the folder into which all files with same extension go
-        for file in files_dict[ext]:
-            full=file+ext
-            move(os.path.join(root,full),path)  #moves file from main folder into sub folder which was created above
+        if os.path.isdir(path):
+            for file in files_dict[ext]:
+                full=file+ext
+                move(os.path.join(root,full),path)  #moves file from main folder into sub folder which was created above
+        else:
+            os.mkdir(path)
+            for file in files_dict[ext]:
+                full=file+ext
+                move(os.path.join(root,full),path)      #makes the folder into which all files with same extension go
+        
         
 
 
