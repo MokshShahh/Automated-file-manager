@@ -1,7 +1,4 @@
 # Automated-file-manager
-A fully automated file organiser and manager made using python.
-It takes a folder path as an input and sorts every files according to thier extension within the folder.
-NOTE: Any sub folders within the main folder are ignored.
-This code will create many folders within the main folder with the name of the extension of the files.
-For example: if there are files with extension .pdf in main folder
-             this program will create another folder named "pdf" inside the main folder and all files with extenion ".pdf" will be moved into this pdf folder
+his project is a Python script designed to help organize files in a cluttered folder. It takes the path of a folder as input and sorts the files within that folder based on their file extensions. The script creates subfolders named after the unique file extensions found in the main folder, and then moves each file into its corresponding subfolder.
+
+For example, if the main folder contains files with extensions like .pdf, .docx, and .pptx, the script will create subfolders named pdf, docx, and pptx, and move all the PDF files into the pdf subfolder, Word documents into the docx subfolder, and PowerPoint presentations into the pptx subfolder.
